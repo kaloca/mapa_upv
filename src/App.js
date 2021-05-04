@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-//import d3component from './d3component'
+import D3component from './d3component'
 
 function App() {
 	return (
@@ -10,8 +10,7 @@ function App() {
 					Unidos Pela Vacina - Mapa do Brasil
 				</p>
 			</header>
-			{/* <d3component />*/}
-			<p>test</p>
+			<D3component />
 		</div>
 	)
 }
