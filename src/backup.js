@@ -76,3 +76,30 @@ const D3component = ({ data }) => {
 }
 
 export default D3component
+
+	let datasw = d3.csv(
+		'http://localhost:8000/data.csv',
+		({
+			local,
+			UF,
+			cidade,
+			num_req,
+			product_code,
+			description,
+			grupo,
+			Unidade,
+			ubs_number,
+			status,
+		}) => [
+			local,
+			UF,
+			cidade,
+			num_req,
+			product_code,
+			description,
+			grupo,
+			Unidade,
+			ubs_number,
+			status,
+		]
+	)

@@ -28,9 +28,12 @@
   </head>
   <style>
   .municipalities {
-    fill: white;
+    fill: blue;
     stroke: black;
     stroke-linejoin: round;
+  }
+  .main-svg {
+    background-color: blueviolet;
   }
 </style>
   <body>
@@ -60,6 +63,17 @@
 
         let cities, painted
 
+        d3.csv('http://localhost:8000/data.csv', ({
+          UF,
+          cidade,
+          product_code,
+        }) => [
+          local,
+          UF,
+          cidade,
+          product_code,
+        ])
+
         d3.json(
             'http://localhost:8000/geojs-100-mun.json',
             function (error, municipalities) {
@@ -78,7 +92,9 @@
                 .enter()
                 .append('path')
                 .attr('d', path)
-                .style('fill', 'red')
+                .style('fill', ('white'))
+                .style('stroke', 'black')
+                .style('stroke-width', 0.2)
             }
           )
         
@@ -89,7 +105,7 @@
         svg.call(zoom)
     </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <!-- <div id="root"></div> -->
+    <div id="root"></div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
